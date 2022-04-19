@@ -73,10 +73,8 @@
 
 			<table border="0" cellpadding="10">
 				<tr>
-					<td><input type="text" th:field="*{idHistorico}"
-						readonly="readonly" /></td>
-					<td><input type="text" th:field="*{idTicketFK}"
-						th:id="pasoinfo" /></td>
+					<td><input type="hidden" th:field="*{idHistorico}"readonly="readonly" /></td>
+					<td><input type="hidden" th:field="*{idTicketFK}" th:id="pasoinfo" /></td>
 				</tr>
 				<tr>
 					<td>Mensaje Historico:</td>
@@ -92,7 +90,7 @@
 	<script>
 			function myFunction3() {
 			
-			document.getElementById('pasoinfo').value = window.hola;
+			document.getElementById('pasoinfo').value = "onApr18202221:24:56G";
 
 			}
 			</script>

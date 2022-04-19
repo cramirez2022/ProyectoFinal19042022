@@ -222,6 +222,7 @@ public class AppController {
 		HistoricoTicket historicoTicket = new HistoricoTicket();
 		model113.addAttribute("historicoTicket", historicoTicket);
 
+		
 		return "newHistorico";
 	}
 	
@@ -229,7 +230,7 @@ public class AppController {
 	public String saveProduct121(@ModelAttribute("rol") HistoricoTicket historicoTicket) {
 		historicoTicketservice.save(historicoTicket);
 
-		return "redirect:/editTicket/{idTicket}";
+		return "redirect:/mistickets";
 	}
 	
 

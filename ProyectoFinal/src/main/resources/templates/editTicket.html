@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/bootstrap.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -33,8 +34,8 @@
 					<li><a href="#">Personal</a> <i
 						class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
 						<ul class="htmlCss-sub-menu sub-menu">
-							<li><a th:href="@{mistickets}">Mis tickets</a></li>
-							<li><a th:href="@{creaticket}">Crear</a></li>
+							<li><a th:href="@{/mistickets}">Mis tickets</a></li>
+							<li><a th:href="@{/creaticket}">Crear</a></li>
 						</ul></li>
 					<li><a href="#">Administración</a> <i
 						class='bx bxs-chevron-down js-arrow arrow '></i>
@@ -65,7 +66,7 @@
 	<link rel="stylesheet" href="/css/bootstrap.css">
 	<title>Editar Ticket</title>
 </head>
-<body onload="myFunction2()">
+<body>
 	<div align="center">
 		<form action="#" th:action="@{/saveTicket}" method="GET">
 			<table border="0" cellpadding="10">
@@ -104,10 +105,9 @@
 			<button th:action="@{/mistickets}" type="submit">Volver</button>
 
 			<h1 align="left">Comentarios Ticket</h1>
-			
-				<a th:href="@{/newHistorico}">Crear nuevo Comentario</a>
-				
-			
+
+			<a th:href="@{/newHistorico}">Crear nuevo Comentario</a>
+
 			<div style="text-align: center;">
 				<table class="table table-bordered" border="1">
 					<thead class="thead-light">
@@ -118,28 +118,15 @@
 					</thead>
 					<tbody>
 						<tr th:each="HistoricoTicket : ${listHistoricoTicket}">
-							<td th:text="${HistoricoTicket.idTicketFK}" >IDTICKET</td>
-							<td th:id="FKTEST" th:text="${HistoricoTicket.mensajeHistorico}">MENSAJEHISTORICO</td>							
+							<td th:text="${HistoricoTicket.idTicketFK}" th:id="FKTEST888">IDTICKET</td>
+							<td th:text="${HistoricoTicket.mensajeHistorico}">MENSAJEHISTORICO</td>
 						</tr>
 					</tbody>
 				</table>
-				
-				
 			</div>
+
 		</form>
 	</div>
 	
-
-	<script>
-		function myFunction2() {
-		
-			 var x = $("#FKTEST").val();
-	         alert(x);
-	        }
-
-		</script>
-
-
-
 </body>
 </html>
