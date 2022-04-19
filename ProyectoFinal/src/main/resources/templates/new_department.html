@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/css/bootstrap.css">
+<title>Nuevo Departamento</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Nuevo Departamento</h1>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${departments}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td># ID :</td>
+					<td><input type="text" th:field="*{dept_no}" /></td>
+				</tr>
+				<tr>
+					<td>Department Name:</td>
+					<td><input type="text" th:field="*{dept_name}" /></td>
+				</tr>
+			</table>
+			<button type="submit" onclick="javascript:alert('Creado');">Crear</button> 
+			<button th:action="@{/}"  type="submit">Volver</button> 
+		</form>
+	</div>
+</body>
+</html>

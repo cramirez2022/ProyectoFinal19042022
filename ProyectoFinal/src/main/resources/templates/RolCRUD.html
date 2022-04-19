@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">Roles Usuarios -CRUD- [[${#httpServletRequest.remoteUser}]]</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">CodingLab</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a th:href="@{/home}">HOME</a></li>
+          <li>
+            <a href="#">Personal</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a th:href="@{mistickets}">Mis tickets</a></li>
+              <li><a th:href="@{creaticket}">Crear</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Administración</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+              <li><a href="#">Estados-ticket</a></li>
+			  <li><a th:href="@{EstadosSistemaCRUD}">Estados-Sistema</a></li>
+              <li><a th:href="@{UsuarioCRUD}">Usuarios</a></li>
+              <li><a th:href="@{RolCRUD}">Roles</a></li>
+            </ul>
+          </li>
+          <li><a th:href="@{/}">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+<br><br><br><br>
+	<a th:href="@{newRol}">Crear nuevo Rol</a>
+<br><br>
+
+<div style="text-align:center;">
+<table class="table table-bordered" border="1">
+      <thead class="thead-light">
+			<tr>
+				<th>Identificador Rol</th>
+				<th>Rol Nombre</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="rol : ${listRol}">
+				<td th:text="${rol.Idrol}">IDROL</td>
+				<td th:text="${rol.Rolusuario}">ROLUSUARIO</td>
+				 <td>
+                	<a th:href="@{'/editRol/' + ${rol.Idrol}}">Editar</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/deleteRol/' + ${rol.Idrol}}" onclick="javascript:alert('Eliminado');">Borrar</a>
+                </td>
+			</tr>
+		</tbody>
+	</table>
+	</div> 
+
+
+</body>
+</html>
